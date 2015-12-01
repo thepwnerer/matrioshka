@@ -1,0 +1,75 @@
+/*Classes go here*/
+
+.openingLines {
+	text-align: center;
+	font-size: 25px;
+}
+
+.links {
+	font-size: 150%;
+	background-color: purple;
+	color: white;
+}
+
+.contentWritten  {
+	text-align: center;
+	vertical-align: middle; 
+	font-size: 150%;
+}
+
+.center {
+	text-align: center;
+}
+
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.contentWrapper {
+	float: left;
+	min-height: 15%;
+	background-color: pink;
+	width: 65%;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+}
+
+.questions, td {
+	text-align: center;
+	border: 1px solid black;
+	margin: 0 auto;
+}
+
+a.test {
+	font-weight: bold;
+}
+
+/*IDs GO HERE*/
+
+#header {
+	width:35%;
+	margin: auto;
+	float: left;
+}
+
+#formDiv {
+	overflow: auto;
+	width: 400px;
+	text-align: center;
+	margin: auto;
+}
+
+#login {
+	background-color: #3399ff;
+	text-align: center;
+	margin-top: 35%;
+	padding: 25px;
+}
+
+#logo {
+	padding: 20px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
