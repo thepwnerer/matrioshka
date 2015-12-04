@@ -6,6 +6,8 @@
   	<?php
   	questionDB::getQuestions($mysqli);
   	?>
+  	<script>
+  </script>
 </div>
 
 
