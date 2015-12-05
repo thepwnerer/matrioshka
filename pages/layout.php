@@ -25,16 +25,14 @@
 		<!-- this is where my javascript is going!! -->
 		<script src="../js/jquery-2.1.4.js"></script>
 		<script> 
-			 // $( document ).ready(function() {
-    //    			 $( "p" ).click(function( event ) {
-    //        			 alert( "The link will no longer take you to jquery.com" );
-    //        			 event.preventDefault();
-    // 			});
-    // 			 $( "a" ).addClass( "test" );
-  		// 	  });
 			function myFunction() {
-				window.confirm("Are you sure you want to delete this?");
-				if ()
+				if(window.confirm("Are you sure you want to delete this?") == false)
+					{
+						event.preventDefault();
+					}
+			}
+			function stupidFunction() {
+				window.alert("I LIKE TO EAT MY BUTTHOLE");
 			}
 		</script>
 	</body>

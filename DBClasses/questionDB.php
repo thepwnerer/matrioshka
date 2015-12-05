@@ -6,10 +6,11 @@ class questionDB {
 		echo "<hr>";
 		$res->data_seek(0);
 		while($row = $res->fetch_assoc()) {
-			echo '<table class="questions"> <tr><td>' . $row['name'] . '</td></tr>
+			echo '<div class=\'questionBox\'><table class="questions"> <tr><td>' . $row['name'] . '</td></tr>
 											<tr><td>' . $row['title'] . '</td></tr>
 			 <tr><td>Question: ' . $row['question'] . ' 
-			 <a href="../DBClasses/DELETE.php?id=' . $row['id'] . '" onclick="myFunction()">Delete</a></td></tr></table><hr>';
+			 <a href="../DBClasses/DELETE.php?id=' . $row['id'] . '" onclick="myFunction()">Delete</a></td></tr></table><hr>
+			 <a href="#" onclick="stupidFunction()">WHAT IS THIS</a></div>';
 
 		}
 	}

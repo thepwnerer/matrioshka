@@ -1,4 +1,11 @@
 /*Classes go here*/
+.questionBox {
+	background-color: #66ccff;
+	margin: 5%;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+}
 
 .openingLines {
 	text-align: center;
@@ -39,7 +46,6 @@ html, body {
 
 .questions, td {
 	text-align: center;
-	border: 1px solid black;
 	margin: 0 auto;
 }
 
