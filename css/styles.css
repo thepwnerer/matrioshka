@@ -5,6 +5,11 @@
 	-moz-border-radius: 100px / 50px;
 	-webkit-border-radius: 100px / 50px;
 	border-radius: 100px / 50px;
+	max-width: 60em;
+}
+
+p.questionParagraph {
+	max-width: 20em;
 }
 
 .openingLines {

@@ -5,9 +5,9 @@
 
 <div id='login'>
 	<h1 id='logo'> Friends!! </h1>
-	<form>
+	<form method='get' action='../DBClasses/LOGIN.php'>
 		<label>Username</label>
-		<input type='text' name='user' />
+		<input type='text' name='username' />
 		<label>Password</label>
 		<input type='password' name='password' />
 		<input type='submit' value='enter!'/>

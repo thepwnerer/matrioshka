@@ -12,7 +12,12 @@
 	</head>
 
 	<body>
-		<?php include 'header.php';?>
+		<?php 
+		if ($_GET["content"] != 'login')
+		{
+			include 'header.php';
+		}
+		?>
 		<?php
 			$content = ($_GET["content"]);
 
