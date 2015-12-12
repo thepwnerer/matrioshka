@@ -29,17 +29,7 @@
 			<?php include 'footer.php';?>
 		<!-- this is where my javascript is going!! -->
 		<script src="../js/jquery-2.1.4.js"></script>
-		<script> 
-			function myFunction() {
-				if(window.confirm("Are you sure you want to delete this?") == false)
-					{
-						event.preventDefault();
-					}
-			}
-			function stupidFunction() {
-				window.alert("I LIKE TO EAT MY BUTTHOLE");
-			}
-		</script>
+		<script src="../js/main.js"></script> 
 	</body>
 
 

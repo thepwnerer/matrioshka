@@ -6,19 +6,20 @@ class questionDB {
 		echo "<hr>";
 		$res->data_seek(0);
 		while($row = $res->fetch_assoc()) {
-			echo '<div class=\'questionBox\'><table class="questions"> <tr><td>' . $row['name'] . '</td></tr>
+			echo '<div class=\'questionBox\' id=\'' . $row['id'] . '\'><table class="questions"> <tr><td>' . $row['user'] . '</td></tr>
 											<tr><td>' . $row['title'] . '</td></tr>
-			 <tr><td><p class=\'questionParagraph\'>Question: ' . $row['question'] . ' 
-			 <a href="../DBClasses/DELETE.php?id=' . $row['id'] . '" onclick="myFunction()">Delete</a></p></td></tr></table><hr>
+			 <tr><td><p class=\'questionParagraph\'>Question: ' . $row['question'] . '
+			 <hr> 
+			 <a id=\'delete' . $row['id'] . '\'href="../DBClasses/DELETE.php?id=' . $row['id'] . '" onclick="myFunction()">Delete</a>
+			  <a id=\'reply' . $row['id'] . '\'href="#" onclick="openTextBox(' . $row['id'] . ')">REPLY</a></p></td></tr></table><hr>
 			 <a href="#" onclick="stupidFunction()">WHAT IS THIS</a></div>';
 
 		}
 	}
 
 	public static function insertQuestion($mysqli) {
-		$stmt = $mysqli->prepare("INSERT INTO questions (createdAt, id, name, question, title) VALUES (?, ?, ?, ?, ?)");
-		$stmt->bind_param("sisss", $createdAt, $id, $name, $question, $title);
-
+		$stmt = $mysqli->prepare("INSERT INTO questions (createdAt, id, user, question, title) VALUES (?, ?, ?, ?, ?)");
+		$stmt->bind_param("sisss", $createdAt, $id, $user, $question, $title);
 		// set parameters and execute
 		date_default_timezone_set('America/Edmonton');
 		$dateArray = getdate();
@@ -37,7 +38,7 @@ class questionDB {
 
 		$createdAt = $insertDate;
 		$id = "";
-		$name = "Bobby Harrington";
+		$user = "Bobby Harrington";
 		$question = ($_GET["question"]);
 		$title = ($_GET["title"]);
 		$stmt->execute();
