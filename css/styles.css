@@ -6,9 +6,24 @@
 	-webkit-border-radius: 100px / 50px;
 	border-radius: 100px / 50px;
 	max-width: 60em;
+	text-align: center;
+}
+
+.answerBox {
+	background-color: #ffcc00;
+	margin: 5%;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	max-width: 60em;
+	text-align: center;
 }
 
 p.questionParagraph {
+	max-width: 20em;
+}
+
+p.answerParagraph {
 	max-width: 20em;
 }
 
@@ -49,7 +64,7 @@ html, body {
 	border-radius: 100px / 50px;
 }
 
-.questions, td {
+.content, td {
 	text-align: center;
 	margin: 0 auto;
 }

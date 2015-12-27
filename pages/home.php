@@ -4,10 +4,9 @@
  </p>
   <p class="center">If you are confused, please learn how to use the site <a href='layout.php?content=howToUse'>here!</a></p>
   	<?php
+  	echo "THE CURRENT USER IS: " . $_SESSION['user'];
   	questionDB::getQuestions($mysqli);
   	?>
-  	<script>
-  </script>
 </div>
 
 

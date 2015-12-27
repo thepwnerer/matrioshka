@@ -3,7 +3,7 @@ class answerDB {
 	//create the answer
 	public static function insertAnswer($mysqli, $qid)
 	{
-		$stmt = $mysqli->prepare("INSERT INTO answers (createdAt, id, text, user) VALUES (?, ?, ?, ?)");
+		$stmt = $mysqli->prepare("INSERT INTO answers (createdAt, aID, text, userAnswer) VALUES (?, ?, ?, ?)");
 		$stmt->bind_param("siss", $createdAt, $answerID, $text, $user);
 		// set parameters and execute
 		date_default_timezone_set('America/Edmonton');
@@ -22,19 +22,32 @@ class answerDB {
 		$insertDate = $dateArray['year'] . "-" . $dateArray['mon'] . "-" . $dateArray['mday'];
 
 		$createdAt = $insertDate;
-		$answerID="";
+		$answerID=null;
 		$text=($_GET["answer"]);
-		$user="Shania Mania";
+		$user="Smelly Punkadunk";
 		$stmt->execute();
+
+		return $mysqli->insert_id;
 	}
 
-	public static function insertQuestionAnswer($mysqli)
+	public static function insertQuestionAnswer($mysqli, $aID)
 	{
 		$stmt2 = $mysqli->prepare("INSERT INTO question_answer (answerID, questionID) VALUES (?,?)");
 		$stmt2->bind_param("ii", $answerID, $qid);
 
-		$answerID = "";
+		$answerID = $aID;
 		$qid = $_GET["qid"];
+		$stmt2->execute();
+	}
+
+	public static function deleteAnswer($mysqli, $qid, $aid) {
+
+		$stmt = $mysqli->prepare("DELETE FROM question_answer WHERE answerID = ? and questionID = ?");
+		$stmt->bind_param("ii", $aid, $qid);
+		$stmt->execute();
+
+		$stmt2 = $mysqli->prepare("DELETE FROM answers WHERE aID = ?");
+		$stmt2->bind_param("i", $aid);
 		$stmt2->execute();
 	}
 }

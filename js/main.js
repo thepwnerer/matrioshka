@@ -6,7 +6,7 @@ function myFunction() {
 					}
 			}
 function stupidFunction() {
-	window.alert("I LIKE TO EAT MY BUTTHOLE");
+	window.alert("TESTINNNNGTESTINNNNG123");
 }
 
 // function openTextBox(x) {

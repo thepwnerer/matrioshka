@@ -8,6 +8,7 @@
 		include "../DBClasses/questionDB.php";
 		$mysqli = connectDB::connect();
 		$collabExample = new questionObject('What makes the world go round?', 'Anon', 'I was wondering what makes the world go round. K, let me know....mmmkay?', 'BURGER', '3');
+		session_start();
 		?>
 	</head>
 
