@@ -1,14 +1,17 @@
+<?php
+	session_start();
+?>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
 		<?php include '../css/styles.css';?>
+		<?php include '../css/pure-release-0.6.0/pure.css';?>
 		</style>
 		<?php include '../Objectclasses/questionObject.php';
 		include "../DBClasses/connectDB.php";
 		include "../DBClasses/questionDB.php";
 		$mysqli = connectDB::connect();
-		$collabExample = new questionObject('What makes the world go round?', 'Anon', 'I was wondering what makes the world go round. K, let me know....mmmkay?', 'BURGER', '3');
-		session_start();
 		?>
 	</head>
 

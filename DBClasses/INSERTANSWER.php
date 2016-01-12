@@ -4,4 +4,4 @@
 	$mysqli = connectDB::connect();
 	$answerID = answerDB::insertAnswer($mysqli, $_GET['qid']);
 	answerDB::insertQuestionAnswer($mysqli, $answerID);
-	header('Location: http://localhost/testPHPProject/pages/layout.php?content=home');
+	header('Location: http://localhost/testPHPProject/pages/layout.php?content=questions');

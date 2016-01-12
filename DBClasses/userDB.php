@@ -2,27 +2,36 @@
 class UserDB {
 	
 	static function logIn($mysqli, $username, $password){
-		$res = $mysqli->query("SELECT username, password FROM `users`");
-		$res->data_seek(0);
-		while($row = $res->fetch_assoc()) {
-			{
-				if($row['username'] + $row['password'] == md5($username) + md5($password))
-				{
-					header('Location: http://localhost/testPHPProject/pages/layout.php?content=home');
-				}
-			}
-		}
-		session_start();
-		
-		if ($username == 'user')
+		$hashedUser = md5($username);
+		$hashedPassword = md5($password);
+		$res = $mysqli->query("SELECT * FROM `users` WHERE username = '" . $hashedUser . "' and password = '" . $hashedPassword . "'");
+		//$res = $mysqli->query("select * from `users`");
+		echo '<pre>';
+		echo  var_dump($res);
+		echo'</pre>';
+		$countVerification = $res->num_rows;
+		echo $countVerification;
+		// echo '<pre>';
+		// echo var_dump($res->fetch_row());
+		// echo'</pre>';
+
+		$loginInfo = $res->fetch_row();
+		echo '<pre>';
+		echo $loginInfo['0'];
+		echo'</pre>';
+
+		if($countVerification == 1 & $loginInfo['0'] == md5('user'))
 		{
-			$_SESSION['user'] = 'user';
+			return 'yesUser';
 		}
-		elseif ($username == 'admin')
+		elseif($countVerification == 1 & $loginInfo['0'] == md5('admin'))
 		{
-			$_SESSION['user'] = 'admin';
+			return 'yesAdmin';
 		}
-		echo 'If you\'re stuck here your Password and Username are Incorrect!!';
+		else
+		{
+			return 'no';
+		}
 	}
 
 }
