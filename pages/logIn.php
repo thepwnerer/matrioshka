@@ -5,7 +5,7 @@
 
 <div id='login'>
 	<h1 id='logo'> Friends!! </h1>
-	<form method='post' action='../DBClasses/LOGIN.php'>
+	<form method='post' action='../scripts/LOGIN.php'>
 		<label>Username</label>
 		<input type='text' name='username' />
 		<label>Password</label>

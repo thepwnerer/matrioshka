@@ -4,7 +4,7 @@
 		We will be on here to answer questions. Give us a little bit. We have to think like regular human beings too.
 	</p>
 	<div id="formDiv">
-		<form method="get" content='notification' action='../DBClasses/INSERTQUESTION.php'class='contentWritten'>
+		<form method="get" content='notification' action='../scripts/INSERTQUESTION.php'class='contentWritten'>
 			<input type='hidden' name='content' value='notification' />
 			<label for='title'>Title</label> <br>
 			<input type='text' class='outlineMe' name='title' size='27'/>

@@ -7,13 +7,13 @@ class questionDB {
 		$res->data_seek(0);
 		while($row = $res->fetch_assoc()) {
 
-			echo '<hr><div class=\'questionBox\' id=\'' . $row['qID'] . '\'><table class="content"> <tr><td>' . $row['userQuestion'] . '</td></tr>
+			echo '<br><hr><br><div class=\'questionBox\' id=\'' . $row['qID'] . '\'><table class="content"> <tr><td>' . $row['userQuestion'] . '</td></tr>
 											<tr><td>' . $row['title'] . '</td></tr>
-			 <tr><td><p class=\'questionParagraph\'>Question: ' . $row['question'] . '
+			 <tr><td><p class=\'questionParagraph\'> ' . $row['question'] . '
 			 <hr> 
-			 <a class=admin id=\'delete' . $row['qID'] . '\'href="../DBClasses/DELETEQUESTION.php?id=' . $row['qID'] . '" onclick="myFunction()">Delete</a>
+			 <a class=admin id=\'delete' . $row['qID'] . '\'href="../scripts/DELETEQUESTION.php?id=' . $row['qID'] . '" onclick="myFunction()">Delete</a>
 			  <a id=\'reply' . $row['qID'] . '\'href="#" onclick="openTextBox(' . $row['qID'] . ')">REPLY</a></p></td></tr></table>
-			 <a href="#" onclick="stupidFunction()">Test Function!!</a></div>';
+			 </div><br>';
 
 			 $returnedAnswers = self::getAnswersForQuestions($mysqli, $row['qID']);
 			 if ($returnedAnswers != null)
@@ -28,9 +28,9 @@ class questionDB {
 		$res->data_seek(0);
 		while ($row = $res->fetch_assoc()) {
 			echo '<div class=\'answerBox\' id=\'a' . $row['aID'] . '\'><table class="content"> <tr><td>' . $row['userAnswer'] . '</td></tr>
-			 <tr><td><p class=\'answerParagraph\'>Answer: ' . $row['text'] . '</td>
-			 <tr><td><a class=admin id=\'delete' . $row['aID'] . '\'href="../DBClasses/DELETEANSWER.php?aID=' . $row['aID'] . '&qID=' . $row['qID'] . '" onclick="myFunction()">Delete</a></td></tr></table>
-			 <a href="#" onclick="stupidFunction()">Test Function!!</a></div>';
+			 <tr><td><p class=\'answerParagraph\'> ' . $row['text'] . '</td>
+			 <tr><td><a class=admin id=\'delete' . $row['aID'] . '\'href="../scripts/DELETEANSWER.php?aID=' . $row['aID'] . '&qID=' . $row['qID'] . '" onclick="myFunction()">Delete</a></td></tr></table>
+			 </div><br>';
 		}
 	}
 

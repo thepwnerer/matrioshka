@@ -1246,6 +1246,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     margin: 0;
     padding: 0;
     height: 100%;
+    outline-color: #00FFFF;
     outline-style: solid;
     font-weight: bold;
 }

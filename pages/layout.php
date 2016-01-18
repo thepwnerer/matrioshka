@@ -1,10 +1,19 @@
 <?php
 	session_start();
+if($_SESSION['verified'] != 'yes')
+  {
+    header('Location: http://localhost/testPHPProject/pages/logIn.php?hack=yes');
+  }
+// if($_SESSION['user'] != 'user' || $_SESSION['user'] != 'admin')
+//   {
+//     header('Location: http://localhost/testPHPProject/pages/logIn.php?hack=yes');
+//   }
 ?>
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
+		<?php include '../lightbox2-master/src/css/lightbox.css';?>
 		<?php include '../css/styles.css';?>
 		<?php include '../css/pure-release-0.6.0/pure.css';?>
 		</style>
@@ -22,6 +31,7 @@
 			include 'header.php';
 		}
 		?>
+		<br>
 		<?php
 			$content = ($_GET["content"]);
 
@@ -34,6 +44,7 @@
 		<!-- this is where my javascript is going!! -->
 		<script src="../js/jquery-2.1.4.js"></script>
 		<script src="../js/main.js"></script> 
+		<script src="../lightbox2-master/src/js/lightbox.js"></script>
 	</body>
 
 

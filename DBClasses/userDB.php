@@ -5,16 +5,12 @@ class UserDB {
 		$hashedUser = md5($username);
 		$hashedPassword = md5($password);
 		$res = $mysqli->query("SELECT * FROM `users` WHERE username = '" . $hashedUser . "' and password = '" . $hashedPassword . "'");
-		//$res = $mysqli->query("select * from `users`");
 		echo '<pre>';
 		echo  var_dump($res);
 		echo'</pre>';
 		$countVerification = $res->num_rows;
 		echo $countVerification;
-		// echo '<pre>';
-		// echo var_dump($res->fetch_row());
-		// echo'</pre>';
-
+		
 		$loginInfo = $res->fetch_row();
 		echo '<pre>';
 		echo $loginInfo['0'];
