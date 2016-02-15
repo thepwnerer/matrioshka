@@ -28,6 +28,10 @@ p.questionParagraph {
 	
 }
 
+#titleQuestion {
+	background-color: #ffcc00;
+}
+
 p.answerParagraph {
 	
 }
@@ -136,6 +140,7 @@ a.test {
 	text-align: center;
 	padding: 15px;
 	outline-style: double;
+	min-width: 400px;
 }
 
 .lightBlue {

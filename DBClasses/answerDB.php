@@ -1,7 +1,7 @@
 <?php
 class answerDB {
 	//create the answer
-	public static function insertAnswer($mysqli, $qid)
+	public static function insertAnswer($mysqli, $qid, $userName)
 	{
 		$stmt = $mysqli->prepare("INSERT INTO answers (createdAt, aID, text, userAnswer) VALUES (?, ?, ?, ?)");
 		$stmt->bind_param("siss", $createdAt, $answerID, $text, $user);
@@ -22,9 +22,9 @@ class answerDB {
 		$insertDate = $dateArray['year'] . "-" . $dateArray['mon'] . "-" . $dateArray['mday'];
 
 		$createdAt = $insertDate;
-		$answerID=null;
-		$text=($_GET["answer"]);
-		$user="Smelly Punkadunk";
+		$answerID = null;
+		$text = ($_GET["answer"]);
+		$user = "$userName";
 		$stmt->execute();
 
 		return $mysqli->insert_id;

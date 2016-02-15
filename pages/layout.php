@@ -4,6 +4,7 @@ if($_SESSION['verified'] != 'yes')
   {
     header('Location: http://localhost/testPHPProject/pages/logIn.php?hack=yes');
   }
+  //I do not know why this is not working. 
 // if($_SESSION['user'] != 'user' || $_SESSION['user'] != 'admin')
 //   {
 //     header('Location: http://localhost/testPHPProject/pages/logIn.php?hack=yes');

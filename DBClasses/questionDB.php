@@ -8,7 +8,7 @@ class questionDB {
 		while($row = $res->fetch_assoc()) {
 
 			echo '<br><hr><br><div class=\'questionBox\' id=\'' . $row['qID'] . '\'><table class="content"> <tr><td>' . $row['userQuestion'] . '</td></tr>
-											<tr><td>' . $row['title'] . '</td></tr>
+											<tr id="titleQuestion"><td>' . $row['title'] . '</td></tr>
 			 <tr><td><p class=\'questionParagraph\'> ' . $row['question'] . '
 			 <hr> 
 			 <a class=admin id=\'delete' . $row['qID'] . '\'href="../scripts/DELETEQUESTION.php?id=' . $row['qID'] . '" onclick="myFunction()">Delete</a>
@@ -34,7 +34,7 @@ class questionDB {
 		}
 	}
 
-	public static function insertQuestion($mysqli) {
+	public static function insertQuestion($mysqli, $userName) {
 		$stmt = $mysqli->prepare("INSERT INTO questions (createdAt, qID, question, title, userQuestion) VALUES (?, ?, ?, ?, ?)");
 		$stmt->bind_param("sisss", $createdAt, $questionID, $question, $title, $userQuestion);
 		// set parameters and execute
@@ -55,7 +55,7 @@ class questionDB {
 
 		$createdAt = $insertDate;
 		$questionID = "";
-		$userQuestion = "Bobby Harrington";
+		$userQuestion = $userName;
 		$question = ($_GET["question"]);
 		$title = ($_GET["title"]);
 		$stmt->execute();

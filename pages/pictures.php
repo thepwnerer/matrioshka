@@ -1,13 +1,16 @@
 
 <div class='contentWrapper'>
 	<p class='contentWritten'>
-		This is where your pictures go, brother. Here you are and this is why they are a good time. I want all y'all to have an okay time with this.
-	</p>
+        Pictures are <b>fun</b>!
+		This is where your pictures go.
+	   To use this properly you should give the photos to me so I can make sure they are upright and 
+       an appropriate size, but all you have to do is CHOOSE the file and then upload it. 
+       Make sure it is appropriate, because if I don't like it I will delete it!
+    </p>
 <br>
 
 <form action="../scripts/UPLOAD.php" id="uploadForm" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
+    upload image here!    <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
 </form>
 

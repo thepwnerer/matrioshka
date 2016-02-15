@@ -24,7 +24,7 @@ function stupidFunction() {
 // }
 
 function openTextBox(x) {
-	$("#" + x).append( "<form id=\'questionForm" + x + "\' method=\'get\' action=\'../scripts/INSERTANSWER.php\'><textarea name=\'answer\' rows=\'15\' cols=\'45\'></textarea><input type=\'hidden\' name=\'qid\' value=\'" + x + "\' /><input type=\'hidden\' name=\'content\' value=\'home\' /><input type=\'submit\' value=\'Reply!\'><input type=\'button\' onclick=\'removeForm(" + x + ")\' value=\'Cancel\'></form>" );
+	$("#" + x).append( "<form id=\'questionForm" + x + "\' method=\'get\' action=\'../scripts/INSERTANSWER.php\'><textarea name=\'answer\' rows=\'15\' cols=\'38\'></textarea><input type=\'hidden\' name=\'qid\' value=\'" + x + "\' /><input type=\'hidden\' name=\'content\' value=\'home\' /><input type=\'submit\' value=\'Reply!\'><input type=\'button\' onclick=\'removeForm(" + x + ")\' value=\'Cancel\'></form>" );
 	document.getElementById("reply" + x).style.display = "none";
 }
 
